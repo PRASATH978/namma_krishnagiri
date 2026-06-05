@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-ec=35^lm$8ec^c$ey=&yqb6in@*%h3z@emkwcfu+ldd4f)os=6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = [
+    ".onrender.com",
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -124,3 +124,5 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CORS_ALLOW_ALL_ORIGINS = True
