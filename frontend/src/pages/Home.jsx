@@ -39,7 +39,7 @@ function Home() {
       }
 
       await axios.post(
-        "http://127.0.0.1:8000/api/issues/create/",
+        "https://namma-krishnagiri.onrender.com/api/issues/create/",
         data,
         {
           headers: {
