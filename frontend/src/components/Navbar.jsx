@@ -8,63 +8,61 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-gradient-to-r from-green-700 via-green-600 to-emerald-500 shadow-xl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <nav className="sticky top-0 z-50 bg-gradient-to-r from-green-800 via-green-700 to-emerald-600 backdrop-blur-md shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
 
-          {/* Logo */}
+          {/* Logo Section */}
           <Link
             to="/"
-            className="flex items-center gap-2"
+            className="flex items-center gap-3 hover:scale-105 transition duration-300"
           >
             <img
               src={logoImage}
               alt="Namma Krishnagiri Logo"
-              className="w-20 h-20 rounded-full"
+              className="w-30 h-30 rounded-full border-2 border-white shadow-md object-cover"
             />
 
             <div>
-              <h1 className="text-white font-bold text-lg sm:text-2xl">
+              <h3 className="text-white text-small sm:text-xl font-bold tracking-wide">
                 நம்ம கிருஷ்ணகிரி
-              </h1>
+              </h3>
 
-              <p className="text-green-100 text-xs hidden sm:block">
+              <p className="text-green-100 text-xs sm:text-sm">
                 People's Voice Platform
               </p>
             </div>
           </Link>
 
-          {/* Desktop Menu */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
 
             <Link
               to="/"
-              className="text-white hover:text-green-100 font-medium transition"
+              className="text-white font-medium hover:text-yellow-300 transition duration-300"
             >
               🏠 Home
             </Link>
 
             <Link
               to="/issues"
-              className="text-white hover:text-green-100 font-medium transition"
+              className="text-white font-medium hover:text-yellow-300 transition duration-300"
             >
               📢 Issues
             </Link>
 
             <Link
               to="/dashboard"
-              className="text-white hover:text-green-100 font-medium transition"
+              className="text-white font-medium hover:text-yellow-300 transition duration-300"
             >
               📊 Dashboard
             </Link>
 
             <select
-              onChange={(e) =>
-                i18n.changeLanguage(e.target.value)
-              }
-              className="bg-white text-green-700 rounded-lg px-3 py-2 font-medium outline-none"
+              onChange={(e) => i18n.changeLanguage(e.target.value)}
               defaultValue={i18n.language}
+              className="bg-white text-green-700 px-3 py-2 rounded-lg font-medium shadow-md outline-none cursor-pointer"
             >
               <option value="ta">தமிழ்</option>
               <option value="en">English</option>
@@ -72,7 +70,7 @@ function Navbar() {
 
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-white text-3xl"
@@ -84,12 +82,12 @@ function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white rounded-2xl shadow-xl mb-4 overflow-hidden">
+          <div className="md:hidden bg-white rounded-2xl shadow-xl mb-4 overflow-hidden animate-fade-in">
 
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
-              className="block px-5 py-4 border-b hover:bg-green-50"
+              className="block px-6 py-4 border-b hover:bg-green-50 transition"
             >
               🏠 Home
             </Link>
@@ -97,14 +95,14 @@ function Navbar() {
             <Link
               to="/issues"
               onClick={() => setMenuOpen(false)}
-              className="block px-5 py-4 border-b hover:bg-green-50"
+              className="block px-6 py-4 border-b hover:bg-green-50 transition"
             >
               📢 Issues
             </Link>
 
-            
-            
         
+
+
 
           </div>
         )}
