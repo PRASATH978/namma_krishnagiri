@@ -21,7 +21,7 @@ function Navbar() {
             <img
               src={logoImage}
               alt="Namma Krishnagiri Logo"
-              className="w-30 h-30 rounded-full border-2 border-white shadow-md object-cover"
+              className="w-30 h-30 rounded-full border- border-white shadow-md object-cover"
             />
 
             <div>
