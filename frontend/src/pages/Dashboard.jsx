@@ -11,7 +11,7 @@ function Dashboard() {
 
   const loadStats = async () => {
     const response = await axios.get(
-      "http://127.0.0.1:8000/api/dashboard/"
+      "https://namma-krishnagiri.onrender.com"
     );
 
     setStats(response.data);

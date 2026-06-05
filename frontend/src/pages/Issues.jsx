@@ -15,7 +15,7 @@ function Issues() {
   const loadIssues = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/issues/"
+        "https://namma-krishnagiri.onrender.com/api/issues/"
       );
 
       setIssues(response.data);
@@ -53,7 +53,7 @@ function Issues() {
       }
 
       await axios.post(
-        "http://127.0.0.1:8000/api/comment/",
+        "https://namma-krishnagiri.onrender.com/api/comment/",
         {
           issue: issueId,
           name: commentData.name,
@@ -81,7 +81,7 @@ function Issues() {
   const voteIssue = async (id) => {
     try {
       await axios.post(
-        `http://127.0.0.1:8000/api/vote/${id}/`
+        `https://namma-krishnagiri.onrender.com/api/vote/${id}/`
       );
 
       loadIssues();
@@ -125,7 +125,7 @@ function Issues() {
             {/* Image */}
             {issue.image && (
               <img
-                src={`http://127.0.0.1:8000${issue.image}`}
+                src={`https://namma-krishnagiri.onrender.com${issue.image}`}
                 alt="Issue"
                 className="w-full h-[500px] object-cover"
               />
